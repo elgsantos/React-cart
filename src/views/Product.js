@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addToCart } from '../actions';
 import { Products } from '../api/Products';
 import "./Products.css";
 
-export default class ProductComponent extends Component {
+class ProductComponent extends Component {
   state = {
     product: {}
   }
@@ -22,7 +24,13 @@ export default class ProductComponent extends Component {
           R$ {this.state.product.price}
         </span>
         <p>{this.state.product.description}</p>
+        <button onClick={() => this.props.addToCart(this.state.product)}>Add to cart</button>
       </div>
     )
   }
 }
+
+export const Product = connect(
+  undefined,
+  { addToCart }
+)(ProductComponent)

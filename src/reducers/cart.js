@@ -5,14 +5,14 @@ const initialState = {
 }
 
 export const cart = (state = initialState, action) => {
-  switch (action, type) {
+  switch (action.type) {
     case ADD_TO_CART:
       if (state.products.find(p => p.id === action.product.id)) {
         return state;
       }
       return {
         ...state,
-        product: state.products.concat(action.product)
+        products: state.products.concat(action.product)
       }
     default:
       return state;

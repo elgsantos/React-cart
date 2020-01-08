@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from "react-redux";
 import { ProductsList } from './views/ProductsList';
-import ProductComponent from './views/Product';
+import { Product } from './views/Product';
 import { Store } from './store';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <h1>Amazing Store</h1>
         <BrowserRouter>
           <Route exact path="/" component={ProductsList} />
-          <Route path="/product/:id" component={ProductComponent} />
+          <Route path="/product/:id" component={Product} />
         </BrowserRouter>
       </div>
     </Provider>
