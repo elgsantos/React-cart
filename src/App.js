@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { ProductsList } from './views/ProductsList';
 import { Product } from './views/Product';
 import { Store } from './store';
+import { Cart } from './views/Cart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
           <Route exact path="/" component={ProductsList} />
           <Route path="/product/:id" component={Product} />
+          <Route path="/cart" component={Cart} />
         </BrowserRouter>
       </div>
     </Provider>

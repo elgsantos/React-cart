@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions';
 import { Products } from '../api/Products';
@@ -25,6 +26,7 @@ class ProductComponent extends Component {
         </span>
         <p>{this.state.product.description}</p>
         <button onClick={() => this.props.addToCart(this.state.product)}>Add to cart</button>
+        <p><Link to="/cart">View Cart</Link></p>
       </div>
     )
   }
